@@ -1,0 +1,29 @@
+var s = document.getElementById("sel");
+var v = s.value;
+var d = document.getElementById("d1");
+console.log(d);
+async function getData() {
+  let response = await fetch("http://jsonplaceholder.typicode.com/users", {
+    method: "GET",
+  });
+  let data = await response.json();
+  console.log(data);
+  for (k in data) {
+    s.innerHTML += `
+    <option>${data[k].name}</option>
+    `;
+    if (data[k].name == s.value) {
+      s.addEventListener("change", function () {
+        d.innerHTML = "";
+        for (i of k) {
+          d.innerHTML += `
+              <h2>username</h2> <p>${i}</p>
+              
+             `;
+        }
+      });
+    }
+  }
+}
+
+getData();

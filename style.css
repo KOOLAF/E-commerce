@@ -1,0 +1,16 @@
+.log {
+  padding: 36px;
+}
+.b {
+  background-color: white;
+  color: #1a1f16;
+}
+.b:hover {
+  background-color: #1a1f16;
+  color: white;
+}
+i:hover {
+  transform: scale(3, 3);
+
+}
+
